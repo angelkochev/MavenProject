@@ -1,0 +1,18 @@
+<suite name="Suite1" verbose="1" parallel="classes" >
+
+    <parameter name="parameter-name" value="Angel" />
+    <parameter name="parameter-name2" value="37" />
+
+    <test name="RegressionSuite">
+        <classes>
+<!--            <class name="MyFirstTest" />-->
+<!--            <class name="AnnotationsTests" />-->
+<!--            <class name="PriorityTests" />-->
+<!--            <class name="ExceptionTests" />-->
+<!--            <class name="DataProvidersTests" />-->
+<!--            <class name="ParametersTests" />-->
+            <class name="apitests.APITests" />
+
+        </classes>
+    </test>
+</suite>
