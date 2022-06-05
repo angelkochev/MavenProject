@@ -1,3 +1,5 @@
+package firstTests;
+
 import org.testng.annotations.Test;
 import java.io.IOException;
 

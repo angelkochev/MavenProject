@@ -5,13 +5,14 @@
 
     <test name="RegressionSuite">
         <classes>
-<!--            <class name="MyFirstTest" />-->
-<!--            <class name="AnnotationsTests" />-->
-<!--            <class name="PriorityTests" />-->
-<!--            <class name="ExceptionTests" />-->
-<!--            <class name="DataProvidersTests" />-->
-<!--            <class name="ParametersTests" />-->
-            <class name="apitests.APITests" />
+<!--            <class name="firstTests.MyFirstTest" />-->
+<!--            <class name="firstTests.AnnotationsTests" />-->
+<!--            <class name="firstTests.PriorityTests" />-->
+<!--            <class name="firstTests.ExceptionTests" />-->
+<!--            <class name="firstTests.DataProvidersTests" />-->
+<!--            <class name="firstTests.ParametersTests" />-->
+<!--            <class name="apitests.APITests" />-->
+            <class name="selenium.FirstSeleniumTest" />
 
         </classes>
     </test>
