@@ -19,7 +19,7 @@ public class FirstSeleniumTest {
 
         driver.get("http://training.skillo-bg.com/posts/all");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         WebElement loginButton = driver.findElement(By.xpath("//*[@id='nav-link-login']"));
         loginButton.click();
