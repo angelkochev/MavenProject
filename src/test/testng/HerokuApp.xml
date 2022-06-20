@@ -1,0 +1,11 @@
+<suite name="Suite1" verbose="1" parallel="classes" >
+
+<!--    <parameter name="parameter-name" value="Angel" />-->
+<!--    <parameter name="parameter-name2" value="37" />-->
+
+    <test name="Regression1">
+        <classes>
+            <class name="selenium.HerokuAppTests" />
+        </classes>
+    </test>
+</suite>
