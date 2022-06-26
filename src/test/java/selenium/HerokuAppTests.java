@@ -45,6 +45,58 @@ public class HerokuAppTests {
         elementsContainerChildren = driver.findElements(By.xpath("//div[@id='elements']/descendant::*"));
         Assert.assertEquals(elementsContainerChildren.size(), 3);
 
-        Thread.sleep(15000);
-    }  
+        Thread.sleep(1000);
+    }
+
+    @Test
+    public void checkboxes(){
+        driver.get("http://the-internet.herokuapp.com/checkboxes");
+
+        WebElement checkboxA = driver.findElement(By.xpath("//form[@id='checkboxes']/input[1]"));
+        WebElement checkboxB = driver.findElement(By.xpath("//form[@id='checkboxes']/input[2]"));
+
+        boolean checkboxStateA = checkboxA.isSelected();
+        boolean checkboxStateB = checkboxB.isSelected();
+
+        checkboxA.click();
+        if(checkboxStateA){
+            Assert.assertFalse(checkboxA.isSelected());
+        } else {
+            Assert.assertTrue(checkboxA.isSelected());
+        }
+
+        checkboxB.click();
+        if(checkboxStateB){
+            Assert.assertFalse(checkboxB.isSelected());
+        } else {
+            Assert.assertTrue(checkboxB.isSelected());
+        }
+
+    }
+
+    @Test
+    public void switchWindows() {
+        driver.get("http://the-internet.herokuapp.com/windows");
+
+        WebElement clickHereLink = driver.findElement(By.linkText("Click Here"));
+        clickHereLink.click();
+
+        for (String window : driver.getWindowHandles()) {
+            driver.switchTo().window(window);
+        }
+
+        Assert.assertEquals(driver.getCurrentUrl(), "http://the-internet.herokuapp.com/windows/new");
+
+    }
+
+    @Test
+    public void iFrames(){
+        driver.get("http://the-internet.herokuapp.com/iframe");
+        driver.switchTo().frame("mce_0_ifr");
+        WebElement text = driver.findElement(By.xpath("//*[@id='tinymce']//p"));
+        text.clear();
+        text.sendKeys("I've lost my keys");
+        driver.switchTo().defaultContent();
+        WebElement title = driver.findElement(By.xpath("//div[@class='example']/h3"));
+    }
 }
